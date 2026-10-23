@@ -1,0 +1,15 @@
+Finalizar Alquiler
+↓
+Calcula kilómetros consumidos
+↓
+Actualiza Auto
+↓
+¿Superó 10.000 km?
+        │
+     Sí ▼
+MANTENIMIENTO
+        │
+Administrador habilita
+        ▼
+DISPONIBLE
+Kilometraje = 0

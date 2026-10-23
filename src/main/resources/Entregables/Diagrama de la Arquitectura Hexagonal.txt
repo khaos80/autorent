@@ -1,0 +1,131 @@
+                           USUARIO
+
+                               │
+                               ▼
+
+                    ┌───────────────────┐
+                    │     FRONTEND      │
+                    │                   │
+                    │ HTML              │
+                    │ CSS               │
+                    │ JavaScript        │
+                    │ Dashboard         │
+                    │ Taller            │
+                    │ Autos             │
+                    │ Clientes          │
+                    │ Alquileres        │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │   REST API        │
+                    │ (Input Adapter)   │
+                    └─────────┬─────────┘
+                              │
+                ┌─────────────┼─────────────┐
+                ▼             ▼             ▼
+
+        ┌────────────┐ ┌────────────┐ ┌────────────┐
+        │Controller  │ │Controller  │ │Controller  │
+        │Auto        │ │Cliente     │ │Alquiler    │
+        └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
+              │              │              │
+              ▼              ▼              ▼
+
+       ┌─────────────────────────────────────┐
+       │      PUERTOS DE ENTRADA             │
+       │         (Use Cases)                 │
+       └─────────────────────────────────────┘
+
+              │              │
+              ▼              ▼
+
+   RegistrarAutoUseCase
+   ConsultarAutoUseCase
+   EliminarAutoUseCase
+
+   RegistrarClienteUseCase
+   ActualizarClienteUseCase
+   EliminarClienteUseCase
+
+   CrearAlquilerUseCase
+   FinalizarAlquilerUseCase
+   RegistrarPagoUseCase
+   FinalizarAlquilerAnticipadoUseCase
+
+   RegistrarKilometrajeUseCase
+   EnviarAutoATallerUseCase
+   HabilitarAutoUseCase
+
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │      SERVICES     │
+                    │                   │
+                    │ AutoService       │
+                    │ ClienteService    │
+                    │ AlquilerService   │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │      DOMINIO      │
+                    └───────────────────┘
+
+                    Auto
+                    Cliente
+                    Alquiler
+
+                    EstadoAuto
+                    EstadoAlquiler
+
+                    Excepciones
+
+                    Reglas de negocio
+
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │ PUERTOS DE SALIDA │
+                    └───────────────────┘
+
+                    AutoRepositoryPort
+                    ClienteRepositoryPort
+                    AlquilerRepositoryPort
+
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │ OUTPUT ADAPTERS   │
+                    └───────────────────┘
+
+                    AutoPersistenceAdapter
+                    ClientePersistenceAdapter
+                    AlquilerPersistenceAdapter
+
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │ SPRING DATA JPA   │
+                    └───────────────────┘
+
+                    AutoJpaRepository
+                    ClienteJpaRepository
+                    AlquilerJpaRepository
+
+                              │
+                              ▼
+
+                    ┌───────────────────┐
+                    │      H2 DB        │
+                    └───────────────────┘
+
+                    AUTOS
+                    CLIENTES
+                    ALQUILERES

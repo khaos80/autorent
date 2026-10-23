@@ -1,0 +1,19 @@
+Usuario
+↓
+Formulario Frontend
+↓
+POST /api/alquileres
+↓
+AlquilerController
+↓
+CrearAlquilerUseCase
+↓
+AlquilerService
+↓
+AutoRepositoryPort
+↓
+AutoPersistenceAdapter
+↓
+AutoJpaRepository
+↓
+H2

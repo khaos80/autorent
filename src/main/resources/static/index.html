@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AutoRent Enterprise</title>
+
+    <!-- FUENTES -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- ICONOS -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- ESTILOS -->
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="autorrent_complemento.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar"
+           aria-label="Panel de navegación">
+
+        <!-- LOGO -->
+
+        <div class="brand brand-horizontal">
+
+            <div class="brand-logo">
+                AR
+            </div>
+
+            <div class="brand-copy">
+
+                <h2>AutoRent</h2>
+
+                <span>Enterprise Edition</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMACIÓN DEL SISTEMA -->
+
+        <div class="system-info"
+             aria-label="Información del sistema">
+
+            <div class="info-item">
+
+                <span>
+                    <i class="fa-solid fa-circle status-dot"></i>
+                    Backend
+                </span>
+
+                <strong class="status-ok">
+                    Spring Boot
+                </strong>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Base de Datos</span>
+
+                <strong class="status-ok">
+                    H2
+                </strong>
+
+            </div>
+
+            <div class="info-item">
+
+                <span>Estado API</span>
+
+                <strong class="status-ok">
+                    ● Online
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENÚ -->
+
+        <div class="nav-label">
+            MENÚ PRINCIPAL
+        </div>
+
+        <nav id="sidebarNav"
+             aria-label="Menú principal">
+
+
+            <!-- INICIO -->
+
+            <button
+                type="button"
+                onclick="mostrarInicio()"
+                data-modulo="Inicio">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Inicio</span>
+
+            </button>
+
+
+            <!-- AUTOS -->
+
+            <div class="nav-group"
+                 id="navAutos"
+                 data-nav-group="Autos">
+
+                <button
+                    type="button"
+                    onclick="mostrarAutos()"
+                    data-modulo="Autos"
+                    aria-expanded="false"
+                    aria-controls="submenuAutos">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                    <span>Autos</span>
+
+                    <i class="fa-solid fa-chevron-down nav-chevron"></i>
+
+                </button>
+
+                <div
+                    class="submenu"
+                    id="submenuAutos"
+                    hidden>
+
+                    <button
+                        type="button"
+                        onclick="mostrarAutos()"
+                        data-submenu="Autos">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <span>Gestión de Autos</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLIENTES -->
+
+            <div class="nav-group"
+                 id="navClientes"
+                 data-nav-group="Clientes">
+
+                <button
+                    type="button"
+                    onclick="mostrarClientes()"
+                    data-modulo="Clientes"
+                    aria-expanded="false"
+                    aria-controls="submenuClientes">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>Clientes</span>
+
+                    <i class="fa-solid fa-chevron-down nav-chevron"></i>
+
+                </button>
+
+                <div
+                    class="submenu"
+                    id="submenuClientes"
+                    hidden>
+
+                    <button
+                        type="button"
+                        onclick="mostrarClientes()"
+                        data-submenu="Clientes">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <span>Gestión de Clientes</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALQUILERES -->
+
+            <div class="nav-group"
+                 id="navAlquileres"
+                 data-nav-group="Alquileres">
+
+                <button
+                    type="button"
+                    onclick="mostrarAlquileres()"
+                    data-modulo="Alquileres"
+                    aria-expanded="false"
+                    aria-controls="submenuAlquileres">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                    <span>Alquileres</span>
+
+                    <i class="fa-solid fa-chevron-down nav-chevron"></i>
+
+                </button>
+
+                <div
+                    class="submenu"
+                    id="submenuAlquileres"
+                    hidden>
+
+                    <button
+                        type="button"
+                        onclick="mostrarAlquileres()"
+                        data-submenu="Alquileres">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <span>Gestión de Alquileres</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TALLER -->
+
+            <div class="nav-group"
+                 id="navTaller"
+                 data-nav-group="Taller">
+
+                <button
+                    type="button"
+                    onclick="mostrarTaller()"
+                    data-modulo="Taller"
+                    aria-expanded="false"
+                    aria-controls="submenuTaller">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    <span>Taller</span>
+
+                    <i class="fa-solid fa-chevron-down nav-chevron"></i>
+
+                </button>
+
+                <div
+                    class="submenu"
+                    id="submenuTaller"
+                    hidden>
+
+                    <button
+                        type="button"
+                        onclick="mostrarTaller()"
+                        data-submenu="Taller">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <span>Gestión de Taller</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- PERFIL -->
+
+        <div class="sidebar-footer">
+
+            <div class="profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="profile-info">
+
+                <strong>Administrador</strong>
+
+                <small>Panel administrativo</small>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <main class="main">
+
+
+        <!-- ENCABEZADO -->
+
+        <header class="topbar">
+
+            <div class="topbar-heading">
+
+                <div class="topbar-icon">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                </div>
+
+                <div>
+
+                    <h1>
+                        AutoRent Enterprise Management
+                    </h1>
+
+                    <p>
+                        Sistema Administrativo de Gestión Vehicular
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FECHA -->
+
+            <div class="topbar-date">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <span id="fechaActual"></span>
+
+            </div>
+
+        </header>
+
+
+        <!-- WORKSPACE -->
+
+        <section
+            id="workspace"
+            aria-label="Área de trabajo">
+
+        </section>
+
+
+        <!-- CONSOLA JSON -->
+
+        <section
+            class="console"
+            aria-label="Consola JSON">
+
+            <div class="console-header">
+
+                <span>
+
+                    <i class="fa-solid fa-code"></i>
+
+                    Consola JSON
+
+                </span>
+
+                <span class="console-badge">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Consola activa
+
+                </span>
+
+            </div>
+
+            <pre id="consoleOutput">Sistema iniciado correctamente...</pre>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

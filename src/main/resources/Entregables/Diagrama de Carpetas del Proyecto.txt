@@ -1,0 +1,28 @@
+src/main/java
+
+com.autorent
+│
+├── domain
+│   ├── model
+│   │   ├── Auto
+│   │   ├── Cliente
+│   │   └── Alquiler
+│   │
+│   └── exception
+│
+├── application
+│   ├── port
+│   │   ├── input
+│   │   └── output
+│   │
+│   └── service
+│
+└── infrastructure
+    ├── adapter
+    │   ├── input
+    │   │   └── rest
+    │   │
+    │   └── output
+    │       └── persistence
+    │
+    └── config
