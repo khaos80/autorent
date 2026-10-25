@@ -74,28 +74,16 @@ git clone https://github.com/khaos80/autorent.git
 cd autorent
 ```
 
-## 3. Compilar el proyecto
+## 3. Compilar el proyecto (Suponiendo que Maven no esta instalado o en las variables de entorno de Windows (PATH) )
 
 ```bash
-mvn clean install
+.\mvnw.cmd clean install
 ```
 
 ## 4. Ejecutar la aplicación
 
 ```bash
-mvn spring-boot:run
-```
-
-o
-
-```bash
 .\mvnw.cmd spring-boot:run
-```
-
-o
-
-```bash
-java -jar target/autorent.jar
 ```
 
 ## 5. Acceder a la aplicación
