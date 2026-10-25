@@ -293,32 +293,95 @@ AlquilerJpaRepository
 # 📂 Estructura del Proyecto
 
 ```text
-com.autorent
-│
-├── domain
-│   ├── model
-│   │   ├── Auto
-│   │   ├── Cliente
-│   │   └── Alquiler
+autorent
+├── .mvn
+├── .vscode
+├── Evidencias y Entregables
+│   ├── Entregables de la Arquitectura
+│   └── Fotos Pruebas de Exito y Error
+│   	  ├── 1. Pruebas de Autos
+│   	  ├── 2. Pruebas de Clientes
+│   	  ├── 3. Pruebas de Alquileres
+│   	  ├── 4. Pruebas de Taller
+│   	  └── 5. Pruebas de Guardado en H2
+│   
+├── src
+│   ├── main
+│   │	  ├── java
+│   │	  │    └── com
+│   │	  │		     └── autorent
+│   │	  │		     	   ├── application
+│   │	  │		     	   │	├── port
+│   │	  │		     	   │	│	 ├── input
+│   │	  │		     	   │	│	 │	   └── UseCase.java
+│   │	  │		     	   │	│	 │
+│   │	  │		     	   │	│	 └── output
+│   │	  │		     	   │	│	 	   └── RepositoryPort.java
+│   │	  │		     	   │	│	 
+│   │	  │		     	   │	└── service
+│   │	  │		     	   │		 └── Service.java
+│   │	  │				     │
+│   │	  │		     	   ├── domain
+│   │	  │		     	   │	├── constants
+│   │	  │		     	   │	│	 └── ErrorMessages.java
+│   │	  │		     	   │	│	 └── SuccessMessages.java
+│   │	  │		     	   │	│
+│   │	  │		     	   │	├── exception
+│   │	  │		     	   │	│	 └── Exception.java
+│   │	  │		     	   │	│
+│   │	  │		     	   │	└── model
+│   │	  │		     	   │		 └── Models.java
+│   │	  │		     	   │	
+│   │	  │		     	   │	
+│   │	  │		     	   └── infrastructure
+│   │	  │		     	   		├── adapter
+│   │	  │		     	   		│	 ├── input
+│   │	  │		     	   		│	 │	  └── rest
+│   │	  │		     	   		│	 │	  	 	├── dto
+│   │	  │		     	   		│	 │	  		│	  └── Request.java
+│   │	  │		     	   		│	 │	   		│
+│   │	  │		     	   		│	 │	  		├── exception
+│   │	  │		     	   		│	 │	  		│	  └── GlobalExceptionHandler.java
+│   │	  │		     	   		│	 │	  		│
+│   │	  │		     	   		│	 │	  		└── Controller.java
+│   │	  │		     	   		│	 │
+│   │	  │		     	   		│	 └── output
+│   │	  │		     	   		│	 	  └── persistence
+│   │	  │		     	   		│	 	   		├── adapter
+│   │	  │		     	   		│	 	  		│	  └── PersistenceAdapter.java
+│   │	  │		     	   		│	 	   		│
+│   │	  │		     	   		│	 			  ├── entity
+│   │	  │		     	   		│	 	  		│	  └── Entity.java
+│   │	  │		     	   		│	 	   		│
+│   │	  │		     	   		│	 			  └── repository
+│   │	  │		     	   		│	 	  			  └── JpaRepository.java
+│   │	  │		     	   		│	 	   		
+│   │	  │		     	   		│
+│   │	  │		     	   		└── config
+│   │	  │		     	   			 └── BeanConfiguration.java
+│   │	  │
+│   │	  └── resources
+│   │	  		├── static
+│   │	  		│	 ├── app.js
+│   │	  		│	 ├── styles.css
+│   │	  		│	 └── index.html
+│   │	  		│	 
+│   │	  		├── templates
+│   │	  		│
+│   │	  		└── application.properties
 │   │
-│   └── exception
+│   │	  		
+│   └── test
+│   
+├── target
 │
-├── application
-│   ├── port
-│   │   ├── input
-│   │   └── output
-│   │
-│   └── service
-│
-└── infrastructure
-    ├── adapter
-    │   ├── input
-    │   │   └── rest
-    │   │
-    │   └── output
-    │       └── persistence
-    │
-    └── config
+├── .gitattributes
+├── .gitignore
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── README.md
 ```
 
 ---

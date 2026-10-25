@@ -1,20 +1,31 @@
 package com.autorent.application.service;
 
-import java.util.*;
+import java.util.List;
 
+import com.autorent.application.port.input.ActualizarClienteUseCase;
 import com.autorent.application.port.input.ConsultarClienteUseCase;
 import com.autorent.application.port.input.ConsultarTodosClientesUseCase;
 import com.autorent.application.port.input.EliminarClienteUseCase;
 import com.autorent.application.port.input.RegistrarClienteUseCase;
-import com.autorent.application.port.input.ActualizarClienteUseCase;
-import com.autorent.application.port.output.ClienteRepositoryPort;
 import com.autorent.application.port.output.AlquilerRepositoryPort;
-import static com.autorent.domain.constants.ErrorMessages.*;
+import com.autorent.application.port.output.ClienteRepositoryPort;
+import static com.autorent.domain.constants.ErrorMessages.CLIENTE_NO_ELIMINABLE;
+import static com.autorent.domain.constants.ErrorMessages.CLIENTE_NO_ENCONTRADO;
+import static com.autorent.domain.constants.ErrorMessages.DOCUMENTO_DUPLICADO;
+import static com.autorent.domain.constants.ErrorMessages.DOCUMENTO_INVALIDO;
+import static com.autorent.domain.constants.ErrorMessages.DOCUMENTO_OBLIGATORIO;
+import static com.autorent.domain.constants.ErrorMessages.EMAIL_INVALIDO;
+import static com.autorent.domain.constants.ErrorMessages.EMAIL_OBLIGATORIO;
+import static com.autorent.domain.constants.ErrorMessages.NOMBRE_OBLIGATORIO;
+import static com.autorent.domain.constants.ErrorMessages.NO_HAY_CLIENTES_REGISTRADOS;
+import static com.autorent.domain.constants.ErrorMessages.TELEFONO_DUPLICADO;
+import static com.autorent.domain.constants.ErrorMessages.TELEFONO_INVALIDO;
+import static com.autorent.domain.constants.ErrorMessages.TELEFONO_OBLIGATORIO;
+import com.autorent.domain.exception.ClienteNoEliminableException;
 import com.autorent.domain.exception.ClienteNoEncontradoException;
 import com.autorent.domain.exception.DatosInvalidosException;
 import com.autorent.domain.exception.DocumentoDuplicadoException;
 import com.autorent.domain.exception.TelefonoDuplicadoException;
-import com.autorent.domain.exception.ClienteNoEliminableException;
 import com.autorent.domain.model.Cliente;
 import com.autorent.domain.model.EstadoAlquiler;
 
@@ -68,7 +79,7 @@ public class ClienteService implements
                 throw new DatosInvalidosException(EMAIL_OBLIGATORIO);
         }
 
-        if (cliente.getEmail() == null || !cliente.getEmail().contains("@")) {
+        if (cliente.getEmail() == null || !cliente.getEmail().matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*\\.[A-Za-z]{2,}$")) {
                 
                 throw new DatosInvalidosException(EMAIL_INVALIDO);
         }
