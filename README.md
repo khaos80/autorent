@@ -65,7 +65,7 @@ De esta forma las reglas de negocio permanecen desacopladas de Spring Boot, JPA 
 ## 1. Clonar repositorio
 
 ```bash
-git clone 
+git clone https://github.com/khaos80/autorent.git
 ```
 
 ## 2. Acceder al proyecto
@@ -84,6 +84,12 @@ mvn clean install
 
 ```bash
 mvn spring-boot:run
+```
+
+o
+
+```bash
+.\mvnw.cmd spring-boot:run
 ```
 
 o
